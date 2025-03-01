@@ -50,4 +50,11 @@ class ProductController extends Controller
         return redirect()->route('product.success')->with('success', 'Product created');
 
     }
+
+    public function success(): View
+    {
+        $message = session('message');
+
+        return view('product.success')->with('message', $message);
+    }
 }
